@@ -1,0 +1,59 @@
+# Lab 08: Integración Continua con GitHub Actions y Jest
+
+Este proyecto implementa una suite de pruebas unitarias automatizadas utilizando **Jest** integradas con un flujo de trabajo de integración continua (CI) mediante **GitHub Actions**. Cada vez que se realiza un cambio en el repositorio, las pruebas se ejecutan automáticamente en la nube para garantizar la estabilidad del código.
+
+---
+
+## Herramientas
+
+* **Node.js** (v24)
+* **Jest** (v30.4.1) - Entorno y ejecución de pruebas unitarias
+* **GitHub Actions** - Automatización del flujo de integración continua (CI)
+
+---
+
+## Estructura del Workflow de CI
+
+La automatización de las pruebas se define en el archivo `.github/workflows/ci.yml`. Este flujo se activa automáticamente en los siguientes eventos:
+* Cada **push** a la rama `main` (o `principal`).
+* Cada **pull request** dirigido a la rama `main`.
+
+### Pasos del Workflow:
+1. **Descargar código:** Clona el repositorio en una máquina virtual Linux (`ubuntu-latest`).
+2. **Configurar Node.js:** Prepara el entorno utilizando la versión 24 de Node.js.
+3. **Instalar dependencias:** Ejecuta `npm install` para preparar el proyecto.
+4. **Ejecutar tests:** Lanza la suite de pruebas mediante `npm test`.
+
+---
+### Estructura del Proyecto
+
+Nota: se ignora gran parte de archivos instalados para la prueba de test. 
+
+📦test
+ ┣ 📂api
+ ┃ ┗ 📜api.test.js
+ ┣ 📂e2e
+ ┃ ┣ 📜mercado-libre.spec.ts
+ ┃ ┗ 📜playwright.config.ts
+ ┗ 📂unitJest
+ ┃ ┣ 📂src
+ ┃ ┃ ┣ 📜buscador.js
+ ┃ ┃ ┗ 📜carrito.js
+ ┃ ┗ 📂test
+ ┃ ┃ ┣ 📜buscador.test.js
+ ┃ ┃ ┗ 📜carrito.test.js
+
+## Cómo ejecutar el proyecto de forma local
+
+### 1. Clonar el repositorio
+```bash
+git clone [https://github.com/Arascely/Lab08_GITHUB_ACTIONS.git](https://github.com/Arascely/Lab08_GITHUB_ACTIONS.git)
+cd Lab08_GITHUB_ACTIONS
+```bash 
+
+---
+# CASO PRÁCTICO 01 — PIPELINE PARA TESTS UNITARIOS (JEST)
+
+# CASO PRÁCTICO 02 . PROVOCAR UN ERROR Y VER EL PIPELINE FALLAR
+
+# CASO PRÁCTICO 03 . PIPELINE PARA PLAYWRIGHT
