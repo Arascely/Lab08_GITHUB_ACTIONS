@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-  "test": "jest test/unitJest test/api"
-  },
+"scripts": {
+  "test:e2e": "playwright test --config=playwright.config.ts --project=chromium"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
