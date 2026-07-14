@@ -53,7 +53,28 @@ cd Lab08_GITHUB_ACTIONS
 
 ---
 # CASO PRÁCTICO 01 — PIPELINE PARA TESTS UNITARIOS (JEST)
+Como ya se habia hecho la implementación de TDD: utilizando el ciclo 
+clásico de desarrollo guiado por pruebas (TDD): RED (escribir la prueba que falla),
+GREEN (escribir el código mínimo para que pase) y REFACTOR (optimizar la estructura sin romper la funcionalidad).
+Entonces se tuvo que actualizar el codigo, para probar el github reations saliera todo correcto.
+Una vez subido, se pudo observar como en el github actions se ponia amarillo y luego verede si todo estaba correcto.
 
+
+Evidencias en la ejecución del github reactions.
 # CASO PRÁCTICO 02 . PROVOCAR UN ERROR Y VER EL PIPELINE FALLAR
 
-# CASO PRÁCTICO 03 . PIPELINE PARA PLAYWRIGHT
+Se modifico la funcion del caso de uso TC-005: Procesamiento de Filtros Simultáneos
+cambiando el resultado esperado. Por lo cual el test fallo, cuando este error es corregido no hay problemas y sigue el flujo correcto.
+
+# CASO PRÁCTICO 03 - PLAYWRIGHT
+
+Primero se modifico el archivo package.json para separar el alcance de ejecución de Jest (npm test) del de 
+Playwright (npm run test:e2e), evitando conflictos de sintaxis y compilación.
+Automatizo la descarga del código, instalación de Node.js, 
+descarga selectiva de navegadores (como Chromium) y la ejecución de pruebas E2E sin interfaz gráfica 
+(headless). Además, se configuró la generación y almacenamiento de reportes HTML detallados como 
+artefactos de GitHub cada vez que se abre un Pull Request en una rama de desarrollo alternativa.
+
+## Evidencias
+Evidencias en la ejecución del github reactions. No se logro la eejcución del gitHub Reactiosn para el caso practico 3. 
+
